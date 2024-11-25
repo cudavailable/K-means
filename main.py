@@ -34,31 +34,32 @@ def k_means(data, k, max_iter=100, tol=1e-4):
 
 	return clusters, centroids
 
-# data = pd.read_csv('4.0.csv', encoding='gbk')
-# 检测文件编码
-import chardet
-with open('4.0.csv', 'rb') as f:
-	encoding = chardet.detect(f.read())['encoding']
-	print(f"文件编码为: {encoding}")
+if __name__ == "__main__":
+	# 读取csv数据
+	data = pd.read_csv('4.0.csv', encoding='utf-8')
 
-data = pd.read_csv('4.0.csv', encoding=encoding, header=None)
-features = data.values # 转化为numpy数组
+	# 查看数据
+	print(data.head())
 
-# 假设 k = 3
-k = 3
-clusters, centroids = k_means(features, k)
+	# 提取特征：密度和含糖率
+	features = data[['density', 'sugercontent']].values  # 提取这两列数据
 
-# 可视化
-plt.figure(figsize=(8, 6))
-for i in range(k):
-	plt.scatter(features[clusters == i, 0], features[clusters == i, 1], label=f'Cluster {i+1}')
+	# 假设 k = 3
+	k = 3
+	clusters, centroids = k_means(features, k)
 
-plt.scatter(centroids[:, 0], centroids[:, 1], c='red', marker='X', s=200, label='Centroids')
-plt.title("K-Means Clustering")
-plt.xlabel("密度")
-plt.ylabel("含糖率")
-plt.legend()
-plt.grid()
-plt.show()
+	# 可视化
+	import matplotlib
 
-print(features)
+	matplotlib.use('TkAgg')  # 设置为 TkAgg 后端，避免与图形界面冲突
+	plt.figure(figsize=(8, 6))
+	for i in range(k):
+		plt.scatter(features[clusters == i, 0], features[clusters == i, 1], label=f'Cluster {i + 1}')
+
+	plt.scatter(centroids[:, 0], centroids[:, 1], c='red', marker='X', s=200, label='Centroids')
+	plt.title("K-Means Clustering")
+	plt.xlabel("density")
+	plt.ylabel("sugercontent")
+	plt.legend()
+	plt.grid()
+	plt.show()
