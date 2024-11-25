@@ -6,4 +6,4 @@
 - kmeans_init_cent.csv : 保存所有K均值算法选取的初始中心点
   
 ## 结果展示
-![[kmeans_run_1.png]]
+![kmeans_run_1](https://github.com/user-attachments/assets/c5ea548c-fc70-4ed9-85a1-de6aec783953)
