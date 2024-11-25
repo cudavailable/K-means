@@ -92,24 +92,16 @@ if __name__ == "__main__":
 		for i, centroid in enumerate(entry['centroids']):
 			all_centroids.append([entry['run'], i + 1, centroid[0], centroid[1]])
 
+	init_centroids = []
+	for entry in centroids_history:
+		for i, init_cent in enumerate(entry['init_cent']):
+			init_centroids.append([entry['run'], i + 1, init_cent[0], init_cent[1]])
+
 	centroids_df = pd.DataFrame(all_centroids, columns=['Run', 'Cluster', 'Centroid_X', 'Centroid_Y'])
 	centroids_df.to_csv('kmeans_centroids.csv', index=False)
 
+	init_df = pd.DataFrame(init_centroids, columns=['Run', 'Cluster', 'Init_Cent_X', 'Init_Cent_Y'])
+	init_df.to_csv('kmeans_init_cent.csv', index=False)
 	print("聚类中心已保存为 kmeans_centroids.csv")
+	print("聚类初始中心已保存为 kmeans_init_cent.csv")
 	print("聚类图已保存为 kmeans_run_1.png, kmeans_run_2.png 等...")
-
-	# 可视化
-	# import matplotlib
-	#
-	# matplotlib.use('TkAgg')  # 设置为 TkAgg 后端，避免与图形界面冲突
-	# plt.figure(figsize=(8, 6))
-	# for i in range(k):
-	# 	plt.scatter(features[clusters == i, 0], features[clusters == i, 1], label=f'Cluster {i + 1}')
-	#
-	# plt.scatter(centroids[:, 0], centroids[:, 1], c='red', marker='X', s=200, label='Centroids')
-	# plt.title("K-Means Clustering")
-	# plt.xlabel("density")
-	# plt.ylabel("sugercontent")
-	# plt.legend()
-	# plt.grid()
-	# plt.show()
