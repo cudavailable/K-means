@@ -6,11 +6,11 @@
 - kmeans_init_cent.csv : 保存所有K均值算法选取的初始中心点
   
 ## 结果展示
-- K = 3
+### K = 3
 ![kmeans_run_2](https://github.com/user-attachments/assets/34cb2164-4833-43f8-be0b-c933753a0260)
 
-- K = 4
+### K = 4
 ![kmeans_run_1](https://github.com/user-attachments/assets/c5ea548c-fc70-4ed9-85a1-de6aec783953)
 
-- K = 5
+### K = 5
 ![kmeans_run_3](https://github.com/user-attachments/assets/ee57395e-d14c-4492-b6cd-fed02959f33b)
