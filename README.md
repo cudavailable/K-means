@@ -7,10 +7,10 @@
   
 ## 结果展示
 ### K = 3
-![kmeans_run_2](https://github.com/cudavailable/K-means/blob/main/kmeans_run_1.png)
+![kmeans_run_2](https://github.com/cudavailable/K-means/blob/main/kmeans_run_2.png)
 
 ### K = 4
-![kmeans_run_1](https://github.com/user-attachments/assets/c5ea548c-fc70-4ed9-85a1-de6aec783953)
+![kmeans_run_1](https://github.com/cudavailable/K-means/blob/main/kmeans_run_1.png)
 
 ### K = 5
-![kmeans_run_3](https://github.com/user-attachments/assets/ee57395e-d14c-4492-b6cd-fed02959f33b)
+![kmeans_run_3](https://github.com/cudavailable/K-means/blob/main/kmeans_run_3.png)
